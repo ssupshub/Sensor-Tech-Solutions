@@ -1,0 +1,106 @@
+ **Clone the Repository Locally**
+
+   ```bash
+   git clone https://github.com/your-username/Sensor-Tech-Solutions-Setup.git
+   cd Sensor-Tech-Solutions-Setup
+   ```
+
+   ```bash
+   touch README.md
+   ```
+
+   ```markdown
+   # Sensor Tech Solutions Setup Guide
+
+   By Shubham
+
+   ## Launch an EC2 Instance
+
+   1. **Launch Instance**
+      - Go to your AWS EC2 dashboard.
+      - Click on **Launch Instance**.
+
+   2. **Create a Key Pair**
+      - If you don’t have an existing key pair, scroll down and create a new key pair.
+
+   3. **Create Security Group**
+      - Open a new tab from the **Security Groups** section.
+      - Create a security group allowing necessary inbound rules (e.g., SSH, HTTP).
+
+   4. **Launch the Instance**
+      - Click **Launch instance**.
+      - Navigate back to the EC2 Dashboard. After a few minutes, you should see your new instance up and running.
+
+   5. **Connect to the EC2 Instance**
+      - Connect to your instance via SSH using your key pair.
+
+   ## Update the System and Install Git
+
+   ```bash
+   sudo apt update && sudo apt full-upgrade -y
+   sudo apt-get install -y git
+   git --version
+   ```
+
+   ## Install Node Version Manager (NVM)
+
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+   source ~/.nvm/nvm.sh
+   ```
+
+   ## Install Node.js Version 16
+
+   ```bash
+   nvm install 16 
+   nvm use 16
+   ```
+
+   - Check Node.js and npm versions:
+
+   ```bash
+   node -v
+   npm -v
+   ```
+
+   ## Install PM2 and Serve
+
+   1. **Install PM2 globally**:
+       ```bash
+       npm install -g pm2
+       ```
+
+   2. **Install `serve` globally**:
+       ```bash
+       npm install -g serve
+       ```
+
+   ## Clone the Repository
+
+   ```bash
+   git clone https://github.com/networks-globe/Sensor-TS.git
+   cd Sensor-TS/
+   ```
+
+   ## Install Project Dependencies
+
+   ```bash
+   npm install
+   ```
+
+   ## Build the Project
+
+   ```bash
+   npm run build
+   ```
+
+   ## Serve the Built Project
+
+   ```bash
+   serve -s dist
+   ```
+
+   ## Access Your Project
+
+   - Copy your instance's public IP address and open it in a browser with `:3000` appended to the end (e.g., `http://<your-ec2-public-ip>:3000`).
+   ```
